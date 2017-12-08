@@ -18,7 +18,7 @@ class WeChatController extends Controller {
         if(isset($_GET['echostr'])){
             //laravel打印 调试很有用
             Log::info($_GET);
-            echo $_GET['echostr'];
+            return $_GET['echostr'];
             exit;
         }
     }
