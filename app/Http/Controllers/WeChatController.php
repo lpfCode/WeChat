@@ -22,13 +22,13 @@ class WeChatController extends Controller {
 //            return $_GET['echostr'];
 //            exit;
 //        }
-        Log::info('request arrived'.$_GET);
+        Log::info('request arrived');
         $wechat = new Application(config('config'));
         $wechat->server->setMessageHandler(function($message){
             return "欢迎关注 overtrue！";
         });
 
-        Log::info('return response.'.$_REQUEST.'dd'.$http_response_header);
+        Log::info('return response.');
 
         return $wechat->server->serve();
 
