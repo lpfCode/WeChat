@@ -15,7 +15,7 @@ use function Psy\debug;
 
 class WeChatController extends Controller {
 
-    public function serve(){
+    public function service(){
         if(isset($_GET['echostr'])) {
             //laravel打印 调试很有用
             Log::info($_GET);
