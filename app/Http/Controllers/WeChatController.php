@@ -34,8 +34,16 @@ class WeChatController extends Controller {
 
     }
     //使用容器自动注入
-    public function demo(Application $wechat){
+    public function demo(){
 
-
+        $wechat = new Application(config('config'));
+        $buttons = [
+            [
+                "type" => "click",
+                "name" => "今日歌曲",
+                "url"  => "https://www.baidu.com/"
+            ]
+        ];
+        $wechat->menu->add($buttons);
     }
 }
