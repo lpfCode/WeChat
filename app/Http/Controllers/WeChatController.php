@@ -15,10 +15,11 @@ use PharIo\Manifest\Application;
 class WeChatController extends Controller {
 
     public function service(){
-        if($_GET['echostr']==null){
-            return "连接失败";
-        }else{
+        if(isset($_GET['echostr'])){
+            //laravel打印 调试很有用
+            Log::info($_GET);
             echo $_GET['echostr'];
+            exit;
         }
     }
     //使用容器自动注入
