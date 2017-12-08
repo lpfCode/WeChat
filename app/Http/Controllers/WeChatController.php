@@ -31,7 +31,7 @@ class WeChatController extends Controller {
             'secret' => '2d839eae8a64fe08d2d6a752a37c3d9a',
             'token'  => 'weixin'
         ];
-        $wechat = new Application($options);
+        $wechat = app('wechat');
         $wechat->server->setMessageHandler(function($message){
 
             return "欢迎关注 overtrue！";
