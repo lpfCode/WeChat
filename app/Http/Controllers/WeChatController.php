@@ -15,15 +15,11 @@ use PharIo\Manifest\Application;
 class WeChatController extends Controller {
 
     public function service(){
-
-        Log::info('请求已收到');
-        $wechat = app('wechat');
-        $wechat->server->setMessageHandler(function ($message){
-
-            return "已经连接";
-        });
-        Log::info('返回的数据');
-        echo "hello";
+        if($_GET['echostr']==null){
+            return "连接失败";
+        }else{
+            echo $_GET['echostr'];
+        }
     }
     //使用容器自动注入
     public function demo(Application $wechat){
