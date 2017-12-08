@@ -23,7 +23,7 @@ class WeChatController extends Controller {
             return "已经连接";
         });
         Log::info('返回的数据');
-        return $wechat->server->serve();
+        return $wechat->server->service();
     }
     //使用容器自动注入
     public function demo(Application $wechat){
