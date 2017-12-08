@@ -18,8 +18,9 @@ class WeChatController extends Controller {
     public function service(){
         if(isset($_GET['echostr'])) {
             //laravel打印 调试很有用
-            Log::info($_GET);
-            return $_GET['echostr'];
+//            Log::info($_GET);
+//            return $_GET['echostr'];
+//            exit;
             $wechat = new Application(config('config'));
             $buttons = [
                 [
@@ -29,18 +30,7 @@ class WeChatController extends Controller {
                 ]
             ];
             $wechat->menu->add($buttons);
-            exit;
         }
-//        Log::info('request arrived');
-//        $wechat = new Application(config('config'));
-//        $wechat->server->setMessageHandler(function($message){
-//            return "欢迎关注 overtrue！";
-//        });
-//
-//        Log::info('return response.');
-//
-//        return $wechat->server->serve();
-
     }
     //使用容器自动注入
     public function demo(){
