@@ -17,7 +17,7 @@ class WeChatController extends Controller {
     public function service(){
 
         Log::info('请求已收到');
-        $wechat = app('wx');
+        $wechat = app('wechat');
         $wechat->server->setMessageHandler(function ($message){
 
             return "已经连接";
